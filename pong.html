@@ -39,6 +39,7 @@
 			width: 20px;
 			height: 20px;
 			background-color: white;
+			border-radius: 50%;
 			position: absolute;
 			z-index: 5;
 		}
@@ -190,41 +191,21 @@
     	}  
 
     	function score() {
-            if (ball_x <= 0) {
+            if (ball_x == 0) {
             scoreRightValue += 1;
+            resetBall();
             ball_vx *= 1;
             ball_vy *= 1;
             document.getElementById("scoreRightVal").innerHTML=scoreRightValue;
-            setTimeout(resetBall, 500) 
 
-            } else if (ball_x >= 800) {
+            } else if (ball_x == 800) {
             scoreLeftValue += 1;
+            resetBall();
             ball_vx *= 1;
             ball_vy *= 1;
             document.getElementById("scoreLeftVal").innerHTML=scoreLeftValue;
-            setTimeout(resetBall, 500)
-
         }
     }
-
-		// function score() {
-		// 	if (ball_x <= 0) {
-		// 	scoreRightValue += 1;
-		// 	ball_vx *= 1;
-		// 	ball_vy *= 1;
-		// 	document.getElementById("scoreRightVal").innerHTML=scoreRightValue; 
-		// 	setTimeout(resetBall, 1500)
-		// 	resetBall();
-		// 	} else if (ball_x >= 800) {
-		// 	scoreLeftValue += 1;
-		// 	ball_vx *= 1;
-		// 	ball_vy *= 1;
-		// 	document.getElementById("scoreLeftVal").innerHTML=scoreLeftValue;
-		// 	setTimeout(resetBall, 1500)
-		// 	resetBall();
-		// }
-		// }
-
 
 		setInterval(loop, (1000 / 80));
 
